@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+.carrossel_slides {
+    width: 100%;
+}
+
+.slide1 {
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+.slide2 {
+    position: relative;
+    top: 110px;
+    left: 6px;
+}
+
+.slide3 {
+    position: relative;
+    top: 110px;
+    left: 6px;
+}
+
+
+
