@@ -11,26 +11,51 @@ body {
 }
 
 .carrossel_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70vh;
     position: relative;
+    width: 46%;
+    margin: 0 auto;
+    overflow: hidden;
+    top: 100px;
 }
 
 .images_carrossel {
-    position: relative;
-    width: 524px;
-    height: 300px;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
 }
 
-.images_carrossel img {
-    position: absolute;
-    top: 0;
-    left: 0;
+.carrossel_slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carrossel_slide img {
     width: 100%;
-    height: 100%;
+    height: 400px;
     object-fit: cover;
+}
+
+button.ant, button.prox {
+    position: absolute;
+    top: 32%;
+    transform: translate(-50%); 
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+button.ant {
+    left: 10px;
+}
+
+button.prox {
+    right: -15px;
+}
+
+button.ant:hover, button.prox:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 table {
