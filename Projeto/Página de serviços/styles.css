@@ -4,14 +4,12 @@
 }
 
 body {
-    margin: 0;               
-    padding: 0;            
-    font-family: Arial, sans-serif; 
-    background-color: #2c8bf1; 
+    font-family: Arial, sans-serif;
+    background-color: #2c8bf1;
+    padding: 20px;
 }
 
 .navbar {
-    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,14 +18,13 @@ body {
     padding: 15px 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border: 2px solid #0e0d0b; 
-    margin-top: 5px;
 }
 
 .navbar-logo {
     font-size: 24px;
     font-weight: bold;
     border: 2px solid #0e0d0b; 
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 4px;
 }
 
@@ -58,13 +55,11 @@ body {
 }
 
 .carrossel_container {
-    border: 10px;
-    border-color: black;
     position: relative;
     width: 46%;
     margin: 0 auto;
     overflow: hidden;
-    top: 100px;
+    top: 10px;
 }
 
 .images_carrossel {
@@ -85,7 +80,7 @@ body {
 
 button.ant, button.prox {
     position: absolute;
-    top: 32%;
+    top: 42%;
     transform: translate(-50%); 
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
