@@ -31,5 +31,11 @@ Comandos:
  - = true | false
  - `${x}`
  - == compara o valor / === compara identidades
+ - document.queryselector("#_")
+ - document.getelementbyid(id)
+ - document.all = Agrupa todos os ID's da página.
+ - ParseTipoDeDado (ParseInt, ParseFloat...).
+ - addEventListener
+ - 
 
  
