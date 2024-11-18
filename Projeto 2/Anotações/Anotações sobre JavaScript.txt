@@ -1,0 +1,35 @@
+Programação Web - JS
+
+Caracteristicas:
+ - Usar o JS de forma externa, apenas no final do html.
+ - Não tem tipagem de dados.
+ - Array representado por [].
+ - String pode ser representado por "" e '', a representação com crase `` serve para representar HTML.
+ - Ultiliza hoisting, coloca automaticamente todas as variaveis no inicio do codigo.
+ - Variaveis sem valor recebem undefined, pois a variavel não tem valor AINDA, caso receba NULL ela não tera valor.
+ - Toda varialvel é declada com o escopo global window, ao não ser que a variavel seja declarado com uma palavra-chave.
+
+ Window:
+	Objetos do Window:
+	- history = Captura todo o histórico de navegação do usuario.
+	- location = Usado para redrecionar páginas.
+	- navigator =
+	- document(dom) =
+
+	Métodos do Window:
+	- prompt =
+	- confirm =
+
+Declaração de variaveis:
+ - var = Uma variavel é declarado com var ela não tem escopo, ou seja, mesmo que a variavel esteja dentro de uma função ela pode ser acessada por todo o código.
+ - let = É uma palavra-chave que permite declarar variáveis locais no escopo de um bloco, instrução ou expressão. 
+ - const = É usada para criar constantes.
+
+Comandos:
+ - Console.log() / Console.dir() 
+ - Debugger 
+ - = true | false
+ - `${x}`
+ - == compara o valor / === compara identidades
+
+ 

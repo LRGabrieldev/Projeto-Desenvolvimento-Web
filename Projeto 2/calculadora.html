@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container-form">
+        <h2>Calculadora</h2>
+
+        <form action="" method="post" autocomplete="on">
+
+            <div class="numero1">
+                <label for="n1">N°</label>
+                <input type="text" id="numero1" name="numero1" required>
+            </div>
+
+            <div class="numero2">
+                <label for="n1">N°</label>
+                <input type="text" id="numero2" name="numero2" required>
+            </div>
+
+            <div class="operacoes">
+                <label for="operacoes">Operações:</label>
+                <select name="op" id="op" required>
+                    <option value="" disabled selected>Selecione uma operação</option>
+                    <option value="somar">Somar</option>
+                    <option value="subtrair">Subtrair</option>
+                    <option value="dividir">Dividir</option>
+                    <option value="multiplicar">Multiplicar</option>
+                </select>
+            </div>
+
+            <button type="submit">Calcular</button>
+            <button type="reset">Limpar campos</button>
+            
+        </form>
+    </div>
+
+</body>
+</html>
