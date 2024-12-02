@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda financeira</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="despesas-container">
@@ -21,15 +22,29 @@
             <label for="receita">Receita(R$)</label>
             <input type="text" id="receitaInput" placeholder="Digite o valor da receita">
 
-            <label for="despesas">Despesas</label>
+            <label for="despesas">Despesas(R$)</label>
             <input type="text" id="despesasInput" placeholder="Digite aqui o valor das despesas">
 
-            <label for="saldo">Saldo</label>
+            <label for="saldo">Saldo(R$)</label>
             <input type="text" id="saldoInput" placeholder="Digite aqui o valor do saldo">
+
+            <button type="submit" id="enviar-button" onclick="">Enviar</button>
 
         </form>
 
-        <table></table>
+        <table id="tabela">
+            <thead>
+                <th>Data</th>
+                <th>Descrição</th>
+                <th>Categoria</th>
+                <th>Receita(R$)</th>
+                <th>Despesas(R$)</th>
+                <th>Saldo(R$)</th>
+            </thead>
+            <tbody>
+            
+            </tbody>
+        </table>
 
     </div>
 </body>
