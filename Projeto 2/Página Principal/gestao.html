@@ -8,10 +8,10 @@
 </head>
 <body>
     <div id="despesas-container">
-        <form action="submit" id="form-container">
+        <form id="form-container">
 
             <label for="data">Data</label>
-            <input type="date" id="dataInput">
+            <input type="text" id="dataInput" placeholder="Digite aqui a data">
 
             <label for="descrição">Descrição</label>
             <input type="text" id="decricaoInput" placeholder="Digite aqui a descrição">
@@ -28,7 +28,11 @@
             <label for="saldo">Saldo(R$)</label>
             <input type="text" id="saldoInput" placeholder="Digite aqui o valor do saldo">
 
-            <button type="submit" id="enviar-button" onclick="">Enviar</button>
+            <div id="mensagem-container" style="display: none;">
+                <label id="mensagem"></label>
+            </div>
+
+            <button type="submit" id="enviar-button" onclick="addTab()">Enviar</button>
 
         </form>
 
