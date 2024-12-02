@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda financeira</title>
     <link rel="stylesheet" href="style.css">
+    <script src="jsgestao.js"></script>
 </head>
 <body>
     <div id="despesas-container">
@@ -14,7 +15,7 @@
             <input type="text" id="dataInput" placeholder="Digite aqui a data">
 
             <label for="descrição">Descrição</label>
-            <input type="text" id="decricaoInput" placeholder="Digite aqui a descrição">
+            <input type="text" id="descricaoInput" placeholder="Digite aqui a descrição">
 
             <label for="categoria">Categoria</label>
             <input type="text" id="categoriaInput" placeholder="Digite aqui a categoria">
@@ -32,7 +33,7 @@
                 <label id="mensagem"></label>
             </div>
 
-            <button type="submit" id="enviar-button" onclick="addTab()">Enviar</button>
+            <button type="submit" id="enviar-button" onclick="addTab(event)">Enviar</button>
 
         </form>
 

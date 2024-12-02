@@ -1,4 +1,5 @@
-function addTab(){
+function addTab(event) {
+    event.preventDefault();
 
     const data = document.getElementById("dataInput").value;
     const descricao = document.getElementById("descricaoInput").value;
@@ -7,16 +8,18 @@ function addTab(){
     const despesas = document.getElementById("despesasInput").value;
     const saldo = document.getElementById("saldoInput").value;
 
-    const vReceita = Number(receita);
-    const vDespesas = Number(despesas);
-    const vSaldo = Number(saldo);
-
-    if(data === "" || descricao === "" || categoria === "" || receita === "" || despesas === "" || saldo === "") {
+    if (data === "" || descricao === "" || categoria === "" || receita === "" || despesas === "" || saldo === "") {
         exibirMensagem("Preencha todos os campos!");
+        return;
     }
 
-    if(isNaN(receita) || isNaN(despesas) || isNaN(saldo)) {
-        exibirMensagem("Nas abas Receita, despesas ou saldo, digite apenas números!");
+    const vReceita = parseFloat(receita);
+    const vDespesas = parseFloat(despesas);
+    const vSaldo = parseFloat(saldo);
+
+    if (isNaN(vReceita) || isNaN(vDespesas) || isNaN(vSaldo)) {
+        exibirMensagem("Nas abas Receita, Despesas ou Saldo, digite apenas números!");
+        return;
     }
 
     const tb = document.getElementById("tabela").getElementsByTagName("tbody")[0];
@@ -30,19 +33,22 @@ function addTab(){
     const colDespesas = linha.insertCell(4);
     const colSaldo = linha.insertCell(5);
 
-    colData.innerHTML = data;
-    colDescricao.innerHTML = descricao;
-    colCategoria.innerHMTL = categoria;
-    colReceita.innerHTML = vReceita;
-    colDespesas.innerHTML = vDespesas;
-    colSaldo.innerHTML = vSaldo;
+    colData.textContent = data;
+    colDescricao.textContent = descricao;
+    colCategoria.textContent = categoria;
+    colReceita.textContent = vReceita.toFixed(2);
+    colDespesas.textContent = vDespesas.toFixed(2);
+    colSaldo.textContent = vSaldo.toFixed(2);
 
-    document.getElementById("data").value = "";
-    document.getElementById("descricao").value = "";
-    document.getElementById("categoria").value = "";
-    document.getElementById("receita").value = "";
-    document.getElementById("despesas").value = "";
-    document.getElementById("saldo").value = "";
+    document.getElementById("dataInput").value = "";
+    document.getElementById("decricaoInput").value = "";
+    document.getElementById("categoriaInput").value = "";
+    document.getElementById("receitaInput").value = "";
+    document.getElementById("despesasInput").value = "";
+    document.getElementById("saldoInput").value = "";
+
+    const mensagemContainer = document.getElementById("mensagem-container");
+    mensagemContainer.style.display = "none";
 }
 
 function exibirMensagem(texto) {
