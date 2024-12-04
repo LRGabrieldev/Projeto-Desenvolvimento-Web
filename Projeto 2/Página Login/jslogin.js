@@ -9,7 +9,7 @@ document.getElementById("form-login").addEventListener("submit", function (e) {
     if (usuarioSalvo && email === usuarioSalvo.email && senha === usuarioSalvo.senha) {
         window.location.href = "http://127.0.0.1:5500/Projeto%202/P%C3%A1gina%20Principal/gestao.html"; 
     } else {
-        exibirMensagem("Email ou senha incorretos!")
+        exibirMensagem("Email ou senha incorretos!");
     }
 });
 

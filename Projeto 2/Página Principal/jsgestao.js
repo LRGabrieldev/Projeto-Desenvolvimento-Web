@@ -1,54 +1,56 @@
+function carregarAgenda() {
+    
+    const usuarioLogado = JSON.parse(localStorage.getItem("usuario"));
+
+    if(!usuarioLogado) {
+        exibirMensagem("Você precisa fazer login primeiro!");
+        window.location.href = "http://127.0.0.1:5500/Projeto%202/P%C3%A1gina%20Login/login.html";
+        return;
+    }
+
+    
+
+    const tb = document.getElementById("tabela").getElementsByTagName("tbody")[0];
+
+    tabela.innerHTML = "";
+
+    usuarioLogado.agenda.forEach(item => {
+        const linha = tb.insertRow();
+
+        linha.insertCell(0).innerText = item.data;
+        linha.insertCell(1).innerText = item.descricao;
+        linha.insertCell(2).innerText = item.categoria;
+        linha.insertCell(3).innerText = item.receita;
+        linha.insertCell(4).innerText = item.despesas;
+        linha.insertCell(5).innerText = item.saldo;
+
+    });
+}
+
 function addTab(event) {
     event.preventDefault();
 
     const data = document.getElementById("dataInput").value;
     const descricao = document.getElementById("descricaoInput").value;
     const categoria = document.getElementById("categoriaInput").value;
-    const receita = document.getElementById("receitaInput").value;
-    const despesas = document.getElementById("despesasInput").value;
-    const saldo = document.getElementById("saldoInput").value;
+    const receita = parseFloat(document.getElementById("receitaInput").value);
+    const despesas = parseFloat(document.getElementById("despesasInput").value);
 
-    if (data === "" || descricao === "" || categoria === "" || receita === "" || despesas === "" || saldo === "") {
+    const saldo = despesas - receita;
+
+    if (data === "" || descricao === "" || categoria === "" || receita === "" || despesas === "") {
         exibirMensagem("Preencha todos os campos!");
         return;
     }
 
-    const vReceita = parseFloat(receita);
-    const vDespesas = parseFloat(despesas);
-    const vSaldo = parseFloat(saldo);
 
-    if (isNaN(vReceita) || isNaN(vDespesas) || isNaN(vSaldo)) {
+    if (isNaN(receita) || isNaN(despesas)) {
         exibirMensagem("Nas abas Receita, Despesas ou Saldo, digite apenas números!");
         return;
     }
 
-    const tb = document.getElementById("tabela").getElementsByTagName("tbody")[0];
-
-    const linha = tb.insertRow();
-
-    const colData = linha.insertCell(0);
-    const colDescricao = linha.insertCell(1);
-    const colCategoria = linha.insertCell(2);
-    const colReceita = linha.insertCell(3);
-    const colDespesas = linha.insertCell(4);
-    const colSaldo = linha.insertCell(5);
-
-    colData.textContent = data;
-    colDescricao.textContent = descricao;
-    colCategoria.textContent = categoria;
-    colReceita.textContent = vReceita.toFixed(2);
-    colDespesas.textContent = vDespesas.toFixed(2);
-    colSaldo.textContent = vSaldo.toFixed(2);
-
-    document.getElementById("dataInput").value = "";
-    document.getElementById("decricaoInput").value = "";
-    document.getElementById("categoriaInput").value = "";
-    document.getElementById("receitaInput").value = "";
-    document.getElementById("despesasInput").value = "";
-    document.getElementById("saldoInput").value = "";
-
     const mensagemContainer = document.getElementById("mensagem-container");
-    mensagemContainer.style.display = "none";
+    mensagemContainer.style.display = "none"
 }
 
 function exibirMensagem(texto) {
@@ -58,3 +60,5 @@ function exibirMensagem(texto) {
     mensagemLabel.textContent = texto;
     mensagemContainer.style.display = "block";
 }
+
+
